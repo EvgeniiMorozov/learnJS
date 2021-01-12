@@ -78,12 +78,15 @@ console.dir(createUser('Vasyl', 'Moscow'));
 let phoneBook = [
     {name: 'Vasyl', phone: '+780445324635'},
     {name: 'Marcus Aurelius', phone: '+380445554433'},
-    {name: 'Gennadii', phone: '+456245123471'},
+    {name: 'Gennadi', phone: '+456245123471'},
     {name: 'Boris', phone: '+987852348621'},
-    {name: 'Valerka', phone: '+785364215968'},
+    {name: 'Valera', phone: '+785364215968'},
 ];
-const findPhoneByName = phoneBook.find(function (person) {
-    return person.phone === person
-})
 
-console.log(findPhoneByName('Valerka'));
+// Реализация функции поиска номера абонента по его имени
+const findPhoneByName = name => {
+    let searchName = name;
+    return phoneBook.find(person => person.name === searchName).phone;
+};
+
+console.log(findPhoneByName('Valera'));
