@@ -61,19 +61,44 @@ const calculate = (a, b) => {
 console.log(calculate(0, 9));
  */
 
-/*
-// Задача 4
+
+// Задача 4.1
+
 let fn = null;
 
+fn = {name: 'Boris'};
+console.log(fn); // --> { name: 'Boris' }
+
+const foo = {name: 'Gennadi'};
+console.log(foo); // --> { name: 'Gennadi' }
+
+fn.name = 'Valera';
+foo.name = 'Vasyl';
+console.log(fn); // --> { name: 'Valera' }
+console.log(foo); // --> { name: 'Vasyl' }
+
+fn = {model: 'Ford'};
+// foo = {model: 'Audi'}; // Ошибка: TypeError: Assignment to constant variable.
+
+console.log(fn); // --> { model: 'Ford' }
+
+// Итого:
+// 1. Переменную можно присвоить другому объекту, а константу нет.
+// 2. Свойства объектов можно менять, независимо от того, присвоена им
+// переменная или константа. По сути объект остаётся один и тот же, меняется
+// "наполнение" объекта.
 
 
+/*
+// Задача 4.2
 const createUser = (name, city) => {
     return {name: name, city: city};
 }
 
 console.dir(createUser('Vasyl', 'Moscow'));
-*/
+ */
 
+/*
 // Задача 5
 let phoneBook = [
     {name: 'Vasyl', phone: '+780445324635'},
@@ -90,3 +115,4 @@ const findPhoneByName = name => {
 };
 
 console.log(findPhoneByName('Valera'));
+*/
