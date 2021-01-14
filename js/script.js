@@ -61,7 +61,7 @@ const calculate = (a, b) => {
 console.log(calculate(0, 9));
  */
 
-
+/*
 // Задача 4.1
 
 let fn = null;
@@ -87,7 +87,7 @@ console.log(fn); // --> { model: 'Ford' }
 // 2. Свойства объектов можно менять, независимо от того, присвоена им
 // переменная или константа. По сути объект остаётся один и тот же, меняется
 // "наполнение" объекта.
-
+*/
 
 /*
 // Задача 4.2
@@ -116,3 +116,26 @@ const findPhoneByName = name => {
 
 console.log(findPhoneByName('Valera'));
 */
+//Задайте справочник (объект) с ключами равными значениям поля name (из
+// предыдущего примера) и значениями равными полю phone.
+
+const phoneBook = {
+    'Vasyl': '+780445324635',
+    'Marcus Aurelius': '+380445554433',
+    'Gennadi': '+456245123471',
+    'Boris': '+987852348621',
+    'Valera': '+785364215968',
+};
+
+const findPhoneByName = name => `${phoneBook[name]}`;
+
+/*
+    (phoneBook[name] === name
+    ? `${phoneBook[name]}`
+    : `А кто это?`
+);
+*/
+
+console.log(findPhoneByName('Valera'));
+console.log(findPhoneByName('Petr'));
+
