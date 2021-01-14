@@ -129,13 +129,6 @@ const phoneBook = {
 
 const findPhoneByName = name => `${phoneBook[name]}`;
 
-/*
-    (phoneBook[name] === name
-    ? `${phoneBook[name]}`
-    : `А кто это?`
-);
-*/
-
 console.log(findPhoneByName('Valera'));
 console.log(findPhoneByName('Petr'));
 
