@@ -161,3 +161,125 @@ console.log(letters.join('---'));
 console.log(letters.join('---').split(''));
 
 */
+
+// Области видимости. Контекст
+/*
+const cities = ['Athens', 'Roma', 'London', 'Beijing', 'Kiev', 'Riga'];
+const f = s => s.length;
+// функция объявлена при помощи function declaration. Внутренние cities и f будут перекрывать наружние.
+function f1() {
+    const cities = ['Athens', 'Roma'];
+    const f = s => s.toUpperCase();
+    console.dir({cities});
+    console.dir(cities.map(f));
+    {
+        const f = s => s.toLowerCase();
+        console.dir({cities});
+        console.dir(cities.map(f));
+    }
+
+    {
+        const cities = ['London', 'Roma', 'Kiev'];
+        console.dir({cities});
+        console.dir(cities.map(f));
+    }
+}
+f1();
+
+console.dir({cities});
+console.dir(cities.map(f));
+
+ */
+
+// Значения по-умолчанию в функциях
+/*
+function fnNew(a, b = 'Hello', c = 5) {
+    console.dir({a, b, c});
+}
+
+fnNew(1, 2, 3);
+fnNew(1, 2);
+fnNew(1);
+fnNew();
+// { a: 1, b: 2, c: 3 }
+// { a: 1, b: 2, c: 5 }
+// { a: 1, b: 'Hello', c: 5 }
+// { a: undefined, b: 'Hello', c: 5 }
+
+//
+function fnOld(a, b, c) {
+    b = b || 'Hello';
+    c = c || 5;
+    console.dir({a, b, c});
+}
+*/
+
+// Атрибуты функции
+/*
+function inc(a) {
+    return ++a;
+}
+const sum = function (a, b) {
+    return a + b;
+}
+
+const max = (a, b) => (a > b ? a : b);
+
+// функция имеет атрибут length, который говорит о количестве аргументов, которые она ожидает получить
+
+console.log('Names:');
+console.dir({
+    inc: inc.name, // считывание имени функции
+    sum: sum.name,
+    max: sum.name,
+});
+console.dir({
+    inc: inc.length, // 1
+    sum: sum.length, // 2
+    max: sum.length, // 2
+});
+
+console.log('Anonymous function:' + function(x) {
+    return x;
+}.name);
+
+console.log('toString');
+console.dir({
+    inc: inc.toString(),
+    sum: sum.toString(),
+    max: sum.toString(),
+});
+*/
+
+// Функции внутри объектов
+const powName = 'pow';
+const obj1 = {
+    fn1: function inc(a) {
+        return ++a;
+    },
+    sum: function(a, b) {
+        return a + b;
+    },
+    // задали имя функции, т.е. и имя inc и значение ключа будет inc
+    inc(a) {
+        return ++a;
+    },
+    // лямбда, которая объявлена при помощи стрелочной функции с блоком операторов
+    max: (a, b) => {
+        return a > b ? a : b;
+    },
+    // лямбда с выражением
+    min: (a, b) => (a < b ? a : b),
+    dec: a => --a,
+    [powName](a, b) {
+        return Math.pow(a, b);
+    },
+};
+console.log('obj1.fn1.name = ' + obj1.fn1.name);
+console.log('obj1.sum.name = ' + obj1.sum.name);
+console.log('obj1.inc.name = ' + obj1.inc.name);
+console.log('obj1.max.name = ' + obj1.max.name);
+console.log('obj1.min.name = ' + obj1.min.name);
+console.log('obj1.dec.name = ' + obj1.dec.name);
+
+
