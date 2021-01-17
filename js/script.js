@@ -251,6 +251,7 @@ console.dir({
 });
 */
 
+/*
 // Функции внутри объектов
 const powName = 'pow';
 const obj1 = {
@@ -281,5 +282,4 @@ console.log('obj1.inc.name = ' + obj1.inc.name);
 console.log('obj1.max.name = ' + obj1.max.name);
 console.log('obj1.min.name = ' + obj1.min.name);
 console.log('obj1.dec.name = ' + obj1.dec.name);
-
-
+*/
