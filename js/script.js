@@ -67,7 +67,7 @@ console.log(sum(1, -3, 8, 21, -11, 7, -6)); // 17
 */
 
 // Задача 2
-
+/*
 const persons = {
     lenin: { born: 1870, died: 1924 },
     mao: { born: 1893, died: 1976 },
@@ -83,3 +83,23 @@ const ages = person => {
     return years;
 };
 console.log(ages(persons));
+*/
+
+// Задача 3
+
+const numArray = [1, 2, 3, 4, 5, 6, 7];
+const strArray = ['Kiev', 'Beijing', 'Lima', 'Saratov'];
+
+const removeElement = (arr, item) => {
+    if (arr.find(el => el === item)) {
+        arr.splice(arr.findIndex(el => el === item), 1);
+        return console.log(arr);
+    } else {
+        console.log('Элемент отсутствует!')
+    }
+};
+
+removeElement(numArray, 5);
+removeElement(numArray, 157);
+removeElement(strArray, 'Lima');
+removeElement(strArray, 'Rostov');
