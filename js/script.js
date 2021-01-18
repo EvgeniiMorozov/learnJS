@@ -91,15 +91,30 @@ const numArray = [1, 2, 3, 4, 5, 6, 7];
 const strArray = ['Kiev', 'Beijing', 'Lima', 'Saratov'];
 
 const removeElement = (arr, item) => {
+
+// Необходимо делать проверку на наличие удаляемого элемента в массиве.
+// Без неё, при отсутсвующем элементе, удаляется последний элемент массива.
+// Необъяснимо, но факт !!! :)
+
     if (arr.find(el => el === item)) {
         arr.splice(arr.findIndex(el => el === item), 1);
-        return console.log(arr);
-    } else {
-        console.log('Элемент отсутствует!')
+        console.log(arr);
+    }
+    return arr;
+};
+
+removeElement(numArray, 5); // [ 1, 2, 3, 4, 6, 7 ]
+removeElement(numArray, 157); // Элемент отсутствует!
+removeElement(strArray, 'Lima'); // [ 'Kiev', 'Beijing', 'Saratov' ]
+removeElement(strArray, 'Rostov'); // Элемент отсутствует!
+
+const removeElements = (arr, ...items) => {
+    for (let i = 0; i <= items.length; i++ ) {
+        removeElement(arr, items[i]);
     }
 };
 
-removeElement(numArray, 5);
-removeElement(numArray, 157);
-removeElement(strArray, 'Lima');
-removeElement(strArray, 'Rostov');
+removeElements(numArray, 5, 33, 12, 4); // [ 1, 2, 3, 6, 7 ]
+removeElements(numArray, 5, 3, 2, 4, 8, 10); // [ 1, 6, 7 ]
+removeElements(strArray, 'Lima', 'Berlin', 'Kiev'); // [ 'Beijing', 'Saratov' ]
+
