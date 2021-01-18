@@ -66,7 +66,19 @@ console.log(sum(10, -2, -3)); // -5
 console.log(sum(1, -3, 8, 21, -11, 7, -6)); // 17
 */
 
+
 // Задача 2
+/*
+const Array = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+
+const maxValue = array => {
+    const max = array.forEach((el, i, arr) => {
+        Math.max()
+    });
+};
+*/
+
+// Задача 3
 /*
 const persons = {
     lenin: { born: 1870, died: 1924 },
@@ -75,18 +87,20 @@ const persons = {
     hirohito: { born: 1901, died: 1989 },
 };
 
-const ages = person => {
+const ages = people => {
     let years = 0;
-    for (const age in person) {
-        years = age.died - age.born;
+    for (const person in people) {
+        console.log(person);
+        let values = Object.values(persons['person']);
+        console.log(values);
     }
     return years;
 };
 console.log(ages(persons));
 */
 
-// Задача 3
-
+// Задача 4
+/*
 const numArray = [1, 2, 3, 4, 5, 6, 7];
 const strArray = ['Kiev', 'Beijing', 'Lima', 'Saratov'];
 
@@ -117,4 +131,4 @@ const removeElements = (arr, ...items) => {
 removeElements(numArray, 5, 33, 12, 4); // [ 1, 2, 3, 6, 7 ]
 removeElements(numArray, 5, 3, 2, 4, 8, 10); // [ 1, 6, 7 ]
 removeElements(strArray, 'Lima', 'Berlin', 'Kiev'); // [ 'Beijing', 'Saratov' ]
-
+*/
