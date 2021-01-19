@@ -72,10 +72,13 @@ console.log(sum(1, -3, 8, 21, -11, 7, -6)); // 17
 const Array = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 
 const maxValue = array => {
-    const max = array.forEach((el, i, arr) => {
-        Math.max()
-    });
+    let newArray = [];
+    for (let i = 0; i <= array.length - 1; i++) {
+        newArray = newArray.concat(array[i]);
+    }
+    return Math.max(...newArray);
 };
+console.log(maxValue(Array));
 */
 
 // Задача 3
