@@ -82,7 +82,7 @@ console.log(maxValue(Array));
 */
 
 // Задача 3
-/*
+
 const persons = {
     lenin: { born: 1870, died: 1924 },
     mao: { born: 1893, died: 1976 },
@@ -90,17 +90,31 @@ const persons = {
     hirohito: { born: 1901, died: 1989 },
 };
 
-const ages = people => {
-    let years = 0;
-    for (const person in people) {
-        console.log(person);
-        let values = Object.values(persons['person']);
-        console.log(values);
+// Ниже оставил комментарии, чтоб дать понять ход мысли
+
+// с помощью метода Object.keys() получим массив ключей объекта persons.
+// const personsList = Object.keys(persons);
+// console.log(persons[personsList[1]]); // { born: 1893, died: 1976 }
+// console.log(persons[personsList[1]].died - persons[personsList[1]].born);
+// 83
+
+const ages = persons => {
+// с помощью метода Object.keys() получим массив ключей объекта persons.
+    const personsList = Object.keys(persons);
+/*
+ Создаем новый объект years, и с помощью итерации заполняем его.
+ Обращаемся к вложенным объектам исходного объекта persons через элементы
+ массива ключей personsList.
+*/
+    let years = {};
+    for (let i = 0; i <= personsList.length - 1; i++) {
+        years[personsList[i]] = persons[personsList[i]].died - persons[personsList[i]].born;
     }
     return years;
 };
+
 console.log(ages(persons));
-*/
+// { lenin: 54, mao: 83, gandhi: 79, hirohito: 88 }
 
 // Задача 4
 /*
