@@ -105,3 +105,51 @@ const func = () => {
 };
 // Ref error
  */
+
+// Задачи
+/*
+const reverse = (str) => {
+    let len = str.length - 1;
+    let result = '';
+    // for (let i = len - 1; i >= 0; i--) {
+    //     result += str[i];
+    //     return result;
+    // }
+    while (len >= 0) {
+        result += str[len];
+        len = len - 1;
+    }
+    return result;
+};
+console.log(reverse('hello, world!'));
+*/
+
+/*
+// написать функцию generateKey (length, characters),
+// возвращающую строчку случайных символов из набора characters длиной length
+
+// const characters = 'abcdefghijklmnopqrstvuvwxyz1234567890';
+// const key = generateKey(16, characters);
+
+const characters = 'abcdefghijklmnopqrstvuvwxyz1234567890';
+
+const random = x => {
+    let rnd = Math.random() * (x - 0);
+    return Math.floor(rnd);
+};
+// console.log(random(16));
+// const len = characters.length;
+//console.log(len); // 37
+
+const generateKey = (num, str) => {
+    const len = str.length;
+    let result = '';
+    for (let i = 0; i < num; i++) {
+        const j = random(len);
+        result = result + str[j];
+    }
+    return result;
+};
+const key = generateKey(16, characters);
+console.log(key);
+*/
