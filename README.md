@@ -41,6 +41,7 @@
     const addNumbers = contract(add, Number, Number, Number);
     const res = addNumbers(2, 3);
     console.dir(res); // Output: 5
+
 and
 
     const concat = (s1, s2) => s1 + s2;
