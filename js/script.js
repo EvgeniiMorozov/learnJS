@@ -1,20 +1,22 @@
 'use strict';
 
 // Задача 1
-
+/*
 // iterate(object, callback)
 // callback(key, value, object)
 
 const obj = { a: 1, b: 2, c: 3, };
 
-const callback = object => {
+// функция для колбэк-вызова
+const objIteration = object => {
     for (const key in object) {
         let value = object[key];
-        console.log('key:' + key, 'value:' + value);
+        console.log(`{ key: ${key}, value: ${value} }`);
     }
 };
-callback(obj);
 
-// const iterate = (object, callback) => callback();
-//
-// iterate(obj, callback);
+const iterate = (object, callback) => callback(object);
+
+iterate(obj, objIteration);
+*/
+
