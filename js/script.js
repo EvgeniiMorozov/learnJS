@@ -20,3 +20,13 @@ const iterate = (object, callback) => callback(object);
 iterate(obj, objIteration);
 */
 
+// Задача 2
+/*
+const store = value => {
+    return () => console.log(value);
+};
+const read = store(5);
+const value = read();
+console.log(value); // 5
+
+ */
