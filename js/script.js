@@ -53,40 +53,53 @@ const res = concatStrings('Hello ', 'world!');
 console.dir(res); // Output: Hello world!
  */
 
-const add = (a, b) => a + b;
-const concat = (s1, s2) => s1 + s2;
+/*
+Для решения задачи надо сделать функцию для проверки типа данных элементов
+массива
+если элементы одного типа, то возвращает true, иначе false
 
-// функция для проверки типа данных элементов массива
-// если элементы одного типа, то возвращает true, иначе false
 const checkType = array => {
     return array.every((el, i, arr) => typeof arr[0] === typeof arr[i]);
 };
-// Проведём проверку функции checkType:
-//
-// let arr = [1, 2, 3, 4, 5, 6, 7];
-// let arr1 = [1, 2, 3, 'string', 5, 6, 7];
-// let arr2 = ['string1', 'string2', 3, 'string4', 5];
-// let arr3 = ['string1', 'string2', 'string3', 'string4'];
-//
-// console.log(checkType(arr)); // true
-// console.log(checkType(arr1)); // false
-// console.log(checkType(arr2)); // false
-// console.log(checkType(arr3)); // true
 
-const contract = (callback) => {
-    return (...types) => {
-        if (checkType === true) {
-            callback(types)
-        } else {
-            console.log('Type error !!!');
-        }
-    };
+let arr = [1, 2, 3, 4, 5, 6, 7];
+let arr1 = [1, 2, 3, 'string', 5, 6, 7];
+let arr2 = ['string1', 'string2', 3, 'string4', 5];
+let arr3 = ['string1', 'string2', 'string3', 'string4'];
+
+console.log(checkType(arr)); // true
+console.log(checkType(arr1)); // false
+console.log(checkType(arr2)); // false
+console.log(checkType(arr3)); // true
+
+Также надо доработать функции add и concat( далее concatStrings )
+
+const add = array => array.reduce((result, num) => result + num);
+const concatStrings = array => array.join('');
+
+*/
+
+const contract = (fn,...types) => {
+    let array = types;
+    const checkType = array => array.every((el, i, arr) => typeof arr[0] === typeof arr[i]);
+
+    const add = array => checkType(array) === true
+        ? array.reduce((result, num) => result + num)
+        : console.log('Type error !!!');
+
+    const concatStrings = array => checkType(array) === true
+        ? array => array.join('')
+        : console.log('Type error !!!');
 };
 
+// const add = (a, b) => a + b;
 const addNumbers = contract(add);
 const res = addNumbers(2, 3);
-// console.log(contract(add, 2, 3));
-console.log(res);
+console.dir(res); // Output: 5
+
+
+
+
 
 
 
