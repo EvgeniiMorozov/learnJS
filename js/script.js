@@ -76,3 +76,6 @@ const concatStrings = contract(concat);
 res = concatStrings('Hello ', 'world!');
 console.dir(res);
 // 'Hello world!'
+
+// console.log(addNumbers(4, '56'));
+// TypeError: Invalid arguments !!!
